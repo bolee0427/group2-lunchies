@@ -1,0 +1,29 @@
+# IDEs
+.idea/
+*.iml
+
+# Local Properties
+**/application-local.properties
+
+#Secrets
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Build & Runtime (Java)
+target/
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+node_modules/
+.next/
+out/
+build/
+
+# Build & Runtime (Node/Next.js)
+node_modules/
+.next/
+out/
+build/
+*.log

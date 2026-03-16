@@ -102,31 +102,22 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-database-postgresql</artifactId>
 		</dependency>
-		<!-- Slack SDK -->
+		<!-- Slack SDK (methods client only, no Bolt) -->
 		<dependency>
 			<groupId>com.slack.api</groupId>
-			<artifactId>bolt</artifactId>
+			<artifactId>slack-api-client</artifactId>
 			<version>1.47.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.slack.api</groupId>
-			<artifactId>bolt-socket-mode</artifactId>
+			<artifactId>slack-api-model</artifactId>
 			<version>1.47.0</version>
 		</dependency>
+		<!-- .env file support -->
 		<dependency>
-			<groupId>javax.websocket</groupId>
-			<artifactId>javax.websocket-api</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.tyrus.bundles</groupId>
-			<artifactId>tyrus-standalone-client</artifactId>
-			<version>1.20</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.36</version>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>spring-dotenv</artifactId>
+			<version>4.0.0</version>
 		</dependency>
 		<!-- Test -->
 		<dependency>

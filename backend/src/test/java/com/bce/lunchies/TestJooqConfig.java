@@ -16,11 +16,6 @@ import reactor.core.publisher.Mono;
 public class TestJooqConfig {
 
     @Bean
-    public DSLContext dslContext(ConnectionFactory connectionFactory) {
-        return DSL.using(connectionFactory, SQLDialect.POSTGRES);
-    }
-
-    @Bean
     public ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
         initializer.setConnectionFactory(connectionFactory);

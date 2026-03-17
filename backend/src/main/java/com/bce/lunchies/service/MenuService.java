@@ -63,6 +63,19 @@ public class MenuService {
                         .then());
     }
 
+    public Mono<Void> appendMenuItems(UUID menuId, List<MenuItemInput> items) {
+        return menuItemRepository.findByMenuId(menuId).count()
+                .flatMap(existingCount -> Flux.fromIterable(items)
+                        .index()
+                        .flatMap(indexed -> {
+                            MenuItemInput item = indexed.getT2();
+                            int order = existingCount.intValue() + indexed.getT1().intValue();
+                            return addMenuItem(menuId, item.name(), item.description(),
+                                    order, item.tags(), item.allergens());
+                        })
+                        .then());
+    }
+
     public Mono<Void> updateSlackMessageTs(UUID menuId, String slackMessageTs) {
         return menuRepository.updateSlackMessageTs(menuId, slackMessageTs);
     }
